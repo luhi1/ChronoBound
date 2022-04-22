@@ -226,7 +226,7 @@
                 android:layout_height="match_parent"
                 android:autoSizeTextType="uniform"
                 android:background="@drawable/whitish_square"
-                android:text="Click to Edit Teacher Profiles"
+                android:text="Click to Edit Club Profiles"
                 android:textAlignment="center"
                 android:textStyle="bold" />
         </LinearLayout>
