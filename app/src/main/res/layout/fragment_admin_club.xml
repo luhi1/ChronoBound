@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".adminClub">
+    tools:context=".adminEmail">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,6 +22,9 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="5sp"
+                android:autoSizeMaxTextSize="10sp"
                 android:id="@+id/etEmailPopup"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -31,6 +34,9 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"/>
             <EditText
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="5sp"
+                android:autoSizeMaxTextSize="10sp"
                 android:id="@+id/etClassPopup"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -40,6 +46,9 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"/>
             <EditText
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="5sp"
+                android:autoSizeMaxTextSize="10sp"
                 android:id="@+id/etTeacherNamePopup"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -49,6 +58,9 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"/>
             <EditText
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="5sp"
+                android:autoSizeMaxTextSize="10sp"
                 android:id="@+id/etRoomNumberPopup"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -75,6 +87,7 @@
 
                     <Button
                         android:autoSizeMinTextSize="5sp"
+                        android:autoSizeMaxTextSize="10sp"
                         android:autoSizeTextType="uniform"
                         android:id="@+id/backButtonPopup"
                         android:layout_width="match_parent"
@@ -99,6 +112,7 @@
 
                     <Button
                         android:autoSizeMinTextSize="5sp"
+                        android:autoSizeMaxTextSize="10sp"
                         android:autoSizeTextType="uniform"
                         android:id="@+id/saveButtonPopup"
                         android:layout_width="match_parent"
@@ -128,6 +142,7 @@
 
             <Button
                 android:autoSizeMinTextSize="5sp"
+                android:autoSizeMaxTextSize="10sp"
                 android:autoSizeTextType="uniform"
                 android:id="@+id/add_button"
                 android:layout_width="match_parent"
@@ -159,13 +174,14 @@
 
                 <Button
                     android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:autoSizeTextType="uniform"
                     android:id="@+id/btnBack"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
                     android:text="Back"
-                    android:textColor="#808080"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -183,6 +199,7 @@
 
                 <Button
                     android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:autoSizeTextType="uniform"
                     android:id="@+id/btnNext"
                     android:layout_width="match_parent"
@@ -232,6 +249,9 @@
                 android:weightSum="10">
 
                 <TextView
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeMaxTextSize="15sp"
                     android:id="@+id/tvEmailName1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -242,6 +262,9 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:id="@+id/etEmailName1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -260,6 +283,7 @@
 
                     <Button
                         android:autoSizeMinTextSize="5sp"
+                        android:autoSizeMaxTextSize="10sp"
                         android:autoSizeTextType="uniform"
                         android:id="@+id/delete_button"
                         android:layout_width="match_parent"
@@ -280,16 +304,22 @@
                 android:weightSum="10">
 
                 <TextView
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeMaxTextSize="15sp"
                     android:id="@+id/tvRoomNumber1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Email:"
+                    android:text="Room:"
                     android:background="@drawable/teal_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
 
                 <EditText
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:id="@+id/etRoomNumber1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -307,16 +337,22 @@
                 android:weightSum="10">
 
                 <TextView
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeMaxTextSize="15sp"
                     android:id="@+id/tvClassName1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Room:"
+                    android:text="Meeting Time:"
                     android:background="@drawable/teal_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
 
                 <EditText
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:id="@+id/etClassName1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -334,6 +370,9 @@
                 android:weightSum="10">
 
                 <TextView
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeMaxTextSize="15sp"
                     android:id="@+id/tvTeacherName1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -344,6 +383,9 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:id="@+id/etTeacherName1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -362,6 +404,7 @@
 
                     <Button
                         android:autoSizeMinTextSize="5sp"
+                        android:autoSizeMaxTextSize="10sp"
                         android:autoSizeTextType="uniform"
                         android:id="@+id/save_button"
                         android:layout_width="match_parent"
@@ -395,6 +438,9 @@
                 android:weightSum="10">
 
                 <TextView
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeMaxTextSize="15sp"
                     android:id="@+id/tvEmailName2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -405,6 +451,9 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:id="@+id/etEmailName2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -423,6 +472,7 @@
 
                     <Button
                         android:autoSizeMinTextSize="5sp"
+                        android:autoSizeMaxTextSize="10sp"
                         android:autoSizeTextType="uniform"
                         android:id="@+id/delete_button2"
                         android:layout_width="match_parent"
@@ -443,16 +493,22 @@
                 android:weightSum="10">
 
                 <TextView
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeMaxTextSize="15sp"
                     android:id="@+id/tvRoomNumber2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Email:"
+                    android:text="Room:"
                     android:background="@drawable/whitish_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
 
                 <EditText
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:id="@+id/etRoomNumber2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -470,16 +526,22 @@
                 android:weightSum="10">
 
                 <TextView
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeMaxTextSize="15sp"
                     android:id="@+id/tvClassName2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Room:"
+                    android:text="Meeting Time:"
                     android:background="@drawable/whitish_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
 
                 <EditText
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:id="@+id/etClassName2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -496,6 +558,9 @@
                 android:weightSum="10">
 
                 <TextView
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeMaxTextSize="15sp"
                     android:id="@+id/tvTeacherName2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -506,6 +571,9 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:id="@+id/etTeacherName2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -524,6 +592,7 @@
 
                     <Button
                         android:autoSizeMinTextSize="5sp"
+                        android:autoSizeMaxTextSize="10sp"
                         android:autoSizeTextType="uniform"
                         android:id="@+id/save_button2"
                         android:layout_width="match_parent"
@@ -558,6 +627,9 @@
                 android:weightSum="10">
 
                 <TextView
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeMaxTextSize="15sp"
                     android:id="@+id/tvEmailName3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -568,6 +640,9 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:id="@+id/etEmailName3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -587,6 +662,7 @@
                     <Button
                         android:autoSizeTextType="uniform"
                         android:autoSizeMinTextSize="5sp"
+                        android:autoSizeMaxTextSize="15sp"
                         android:id="@+id/delete_button3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -606,16 +682,22 @@
                 android:weightSum="10">
 
                 <TextView
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeMaxTextSize="15sp"
                     android:id="@+id/tvRoomNumber3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Email:"
+                    android:text="Room:"
                     android:background="@drawable/teal_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
 
                 <EditText
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:id="@+id/etRoomNumber3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -633,16 +715,22 @@
                 android:weightSum="10">
 
                 <TextView
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeMaxTextSize="15sp"
                     android:id="@+id/tvClassName3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Room:"
+                    android:text="Meeting Time:"
                     android:background="@drawable/teal_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
 
                 <EditText
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:id="@+id/etClassName3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -660,6 +748,9 @@
                 android:weightSum="10">
 
                 <TextView
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeMaxTextSize="15sp"
                     android:id="@+id/tvTeacherName3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -670,6 +761,9 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeMaxTextSize="10sp"
                     android:id="@+id/etTeacherName3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -689,6 +783,7 @@
                     <Button
                         android:autoSizeTextType="uniform"
                         android:autoSizeMinTextSize="5sp"
+                        android:autoSizeMaxTextSize="15sp"
                         android:id="@+id/save_button3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
