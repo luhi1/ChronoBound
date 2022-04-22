@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/drawable/dark_blue_square.xml" value="0.14" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1955" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/drawable/ic_baseline_schedule_24.xml" value="0.1955" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/drawable/ic_calendar.xml" value="0.1955" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/drawable/ic_schedule.xml" value="0.14" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/drawable/teal_square.xml" value="0.14" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/drawable/whitish_square.xml" value="0.14" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/activity_admin_calendar.xml" value="0.14709569577935647" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/activity_calendar.xml" value="0.33" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/activity_club.xml" value="0.22" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/activity_email.xml" value="0.2" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/activity_email_send.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/activity_lunch.xml" value="0.12" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/activity_register.xml" value="0.18" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/fragment_admin_calendar.xml" value="0.18" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/fragment_admin_club.xml" value="0.22" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/fragment_admin_email.xml" value="0.2" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/fragment_admin_lunch.xml" value="0.14" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/fragment_calendar.xml" value="0.21350364963503649" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/fragment_club.xml" value="0.18" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/fragment_email.xml" value="0.12991452991452992" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/fragment_lunch.xml" value="0.1" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/layout/fragment_schedule.xml" value="0.22384428223844283" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/menu/admin_menu.xml" value="0.24559777571825764" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/menu/admin_menu1.xml" value="0.29717180244829045" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/menu/admin_menu_navigation.xml" value="0.16075245831551946" />
+        <entry key="..\:/Users/micha/AndroidStudioProjects/UserAuth/app/src/main/res/menu/bottom_menu.xml" value="0.3009833262077811" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

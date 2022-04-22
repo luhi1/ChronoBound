@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/calendarFragment">
+
+    <fragment
+        android:id="@+id/clubFragment"
+        android:name="com.example.userauth.clubFragment"
+        android:label="fragment_club"
+        tools:layout="@layout/fragment_club" />
+    <fragment
+        android:id="@+id/lunchFragment"
+        android:name="com.example.userauth.lunchFragment"
+        android:label="fragment_lunch"
+        tools:layout="@layout/fragment_lunch" />
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.example.userauth.emailFragment"
+        android:label="fragment_email"
+        tools:layout="@layout/fragment_email" />
+    <fragment
+        android:id="@+id/scheduleFragment"
+        android:name="com.example.userauth.scheduleFragment"
+        android:label="fragment_schedule"
+        tools:layout="@layout/fragment_schedule" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.userauth.calendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
+
+    <!-- code take from https://www.youtube.com/watch?v=Chso6xrJ6aU -->
+</navigation>

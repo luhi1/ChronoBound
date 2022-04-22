@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_nav"
+    app:startDestination="@id/adminLunch">
+
+    <fragment
+        android:id="@+id/adminCalendar"
+        android:name="com.example.userauth.adminCalendar"
+        android:label="fragment_admin_calendar"
+        tools:layout="@layout/fragment_admin_calendar" />
+    <fragment
+        android:id="@+id/adminEmail"
+        android:name="com.example.userauth.adminEmail"
+        android:label="fragment_admin_email"
+        tools:layout="@layout/fragment_admin_email" />
+    <fragment
+        android:id="@+id/adminLunch"
+        android:name="com.example.userauth.adminLunch"
+        android:label="fragment_admin_lunch"
+        tools:layout="@layout/fragment_admin_lunch" />
+    <fragment
+        android:id="@+id/adminClub"
+        android:name="com.example.userauth.adminClub"
+        android:label="fragment_admin_club"
+        tools:layout="@layout/fragment_admin_club" />
+</navigation>

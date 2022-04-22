@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">UserAuth</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">password</string>
+    <string name="register">Register</string>
+    <string name="dont_t_have_an_account">Dont\'t have an account?</string>
+    <string name="Already_have_an_account">Already have an account?</string>
+    <string name="Lunch_Menu">Lunch Menu</string>
+    <string name="title_activity_lunch">LunchActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

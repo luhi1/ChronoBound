@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Calendar"
+          android:id = "@+id/calendarFragment"
+          android:icon = "@drawable/ic_calendar"/>
+    <item android:title="Schedule"
+          android:id = "@+id/scheduleFragment"
+          android:icon = "@drawable/ic_schedule"/>
+    <item android:title="Lunch"
+          android:id = "@+id/lunchFragment"
+          android:icon = "@drawable/ic_food"/>
+    <item android:title="Email"
+          android:id = "@+id/emailFragment"
+          android:icon = "@drawable/ic_email"/>
+    <item android:title="Clubs"
+          android:id = "@+id/clubFragment"
+          android:icon = "@drawable/ic_run"/>
+    <!-- code take from https://www.youtube.com/watch?v=Chso6xrJ6aU -->
+</menu>

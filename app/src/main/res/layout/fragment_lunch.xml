@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".lunchFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id = "@+id/TopLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            android:background="@drawable/dark_blue_square"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:background="@drawable/dark_blue_square"
+                android:id="@+id/txtMonday"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:text="M"
+                android:textAlignment="center"
+                android:textColor="#263238"
+                android:textStyle="bold" />
+
+            <TextView
+                android:background="@drawable/dark_blue_square"
+                android:id="@+id/txtTuesday"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:text="T"
+                android:textAlignment="center"
+                android:textColor="#263238"
+                android:textStyle="bold" />
+
+            <TextView
+                android:background="@drawable/dark_blue_square"
+                android:id="@+id/txtWednesday"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:text="W"
+                android:textAlignment="center"
+                android:textColor="#263238"
+                android:textStyle="bold" />
+
+            <TextView
+                android:background="@drawable/dark_blue_square"
+                android:id="@+id/txtThursday"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:text="Th"
+                android:textAlignment="center"
+                android:textColor="#263238"
+                android:textStyle="bold" />
+
+            <TextView
+                android:background="@drawable/dark_blue_square"
+                android:id="@+id/txtFriday"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:text="F"
+                android:textAlignment="center"
+                android:textColor="#263238"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:textColor="#263238"
+            android:id = "@+id/layoutMainCourseTxt"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.033"
+            android:background="@drawable/whitish_square"
+            android:weightSum = "5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/TopLayout" >
+
+            <!--<View
+                android:layout_width="0dp"
+                android:background="#578384"
+                android:layout_weight = "2"
+                android:layout_height="match_parent"/> -->
+            <TextView
+                android:background="@drawable/whitish_square"
+                android:layout_weight = "5"
+                android:id="@+id/txtMondayMain"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:autoSizeTextType="uniform"
+                android:text="Today's Main Course Is:"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="#263238" />
+            <!-- <View
+                android:layout_width="0dp"
+                android:background="#578384"
+                android:layout_weight = "2"
+                android:layout_height="match_parent"/> -->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id = "@+id/layoutMainCourse"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.29"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/teal_square"
+            android:textColor="#263238"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/layoutMainCourseTxt" >
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/monday_main"
+                android:layout_weight = "1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/tuesday_main"
+                android:layout_weight = "1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/wednesday_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight = "1"
+                android:textAlignment="center" />
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/thursday_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight = "1"
+                android:textAlignment="center" />
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/friday_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight = "1"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:textColor="#263238"
+            android:id = "@+id/layoutSideCourseTxt"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:background="@drawable/whitish_square"
+            android:weightSum = "5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.033"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutMainCourse" >
+
+            <!-- <View
+                android:layout_width="0dp"
+                android:background="#578384"
+                android:layout_weight = "2"
+                android:layout_height="match_parent"/> -->
+            <TextView
+                android:background="@drawable/whitish_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/txtMondaySide"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight = "5"
+                android:autoSizeTextType="uniform"
+                android:text="Today's Side Course Is:"
+                android:textAlignment="center"/>
+            <!-- <View
+                android:background="#578384"
+                android:layout_width="0dp"
+                android:layout_weight = "2"
+                android:layout_height="match_parent"/> -->
+        </LinearLayout>
+
+        <LinearLayout
+            android:textStyle="bold"
+            android:id = "@+id/layoutSideCourse"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:textColor="#263238"
+            android:weightSum="5"
+            android:background="@drawable/teal_square"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.29"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutSideCourseTxt" >
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/monday_side"
+                android:layout_weight = "1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/tuesday_side"
+                android:layout_weight = "1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/wednesday_side"
+                android:layout_weight = "1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/thursday_side"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight = "1"
+                android:textAlignment="center" />
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/friday_side"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight = "1"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id = "@+id/layoutDrinkCourse"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.29"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="#263238"
+            android:background="@drawable/teal_square"
+            app:layout_constraintTop_toBottomOf="@id/layoutDrinkTxt" >
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/monday_drink"
+                android:layout_weight = "1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/tuesday_drink"
+                android:layout_weight = "1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/wednesday_drink"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight = "1"
+                android:textAlignment="center" />
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/thursday_drink"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight = "1"
+                android:textAlignment="center" />
+
+            <TextView
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:id="@+id/friday_drink"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight = "1"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:textColor="#263238"
+            android:id = "@+id/layoutDrinkTxt"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/whitish_square"
+            app:layout_constraintHeight_percent="0.033"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutSideCourse" >
+
+            <!-- <View
+                android:background="#578384"
+                android:layout_width="0dp"
+                android:layout_weight = "2"
+                android:layout_height="match_parent"/> -->
+
+            <TextView
+                android:background="@drawable/whitish_square"
+                android:textStyle="bold"
+                android:textColor="#263238"
+                android:layout_weight = "5"
+                android:id="@+id/txtDrink"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:autoSizeTextType="uniform"
+                android:text="Today's Drink Choice Is:"
+                android:textAlignment="center" />
+
+            <!-- <View
+                android:background="#578384"
+                android:layout_width="0dp"
+                android:layout_weight = "2"
+                android:layout_height="match_parent"/> -->
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

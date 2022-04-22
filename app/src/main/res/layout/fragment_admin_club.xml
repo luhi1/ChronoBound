@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".adminClub">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/emailPopUpLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/teal_square"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            android:weightSum="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/etEmailPopup"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.125"
+                android:hint="Click To Enter an Meeting Time"
+                android:background="@drawable/teal_square"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/etClassPopup"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.125"
+                android:hint="Click To Enter a Club Name"
+                android:background="@drawable/teal_square"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/etTeacherNamePopup"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.125"
+                android:hint="Click To Enter a Teacher Name"
+                android:background="@drawable/teal_square"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/etRoomNumberPopup"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.125"
+                android:hint="Click To Enter a Room Number"
+                android:textColor="@color/black"
+                android:background="@drawable/teal_square"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:orientation="horizontal"
+                android:background="@drawable/teal_square"
+                android:weightSum="6">
+
+                <RelativeLayout
+                    android:id="@+id/backButtonPopupLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/dark_blue_square"
+                    android:visibility="visible">
+
+                    <Button
+                        android:id="@+id/backButtonPopup"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="@android:color/transparent"
+                        android:text="Back"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"/>
+                <RelativeLayout
+                    android:id="@+id/saveButtonPopupLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/dark_blue_square"
+                    android:visibility="visible">
+
+                    <Button
+                        android:id="@+id/saveButtonPopup"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="@android:color/transparent"
+                        android:text="Save"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainView">
+
+        <RelativeLayout
+            android:id="@+id/add_buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintTop_toBottomOf="@id/email3Layout"
+            android:background="@drawable/dark_blue_square"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/add_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:text="Create A New Club"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/btnNextLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/whitish_square"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            app:layout_constraintHeight_percent="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_buttonLayout">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/whitish_square">
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:text="Back"
+                    android:textColor="#808080"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:background="@drawable/whitish_square" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/whitish_square">
+
+                <Button
+                    android:id="@+id/btnNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:text="Next"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txtEmails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/whitish_square"
+                android:text="Click to Edit Club Profiles"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/email1Layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/teal_square"
+            android:orientation="vertical"
+            android:weightSum="4"
+            app:layout_constraintHeight_percent="0.257"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/tvEmailName1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:text="Club Name:"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etEmailName1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4.5"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/delete_buttonLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@color/red"
+                    android:visibility="visible">
+
+                    <Button
+                        android:id="@+id/delete_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:text="Delete"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/tvRoomNumber1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:text="Room:"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etRoomNumber1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7.5"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/tvClassName1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:text="Meeting Time:"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etClassName1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7.5"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/tvTeacherName1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:text="Teacher Name:"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etTeacherName1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4.5"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/teacher1Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/whitish_square"
+                    android:visibility="visible">
+
+                    <Button
+                        android:id="@+id/save_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:text="Save"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/email2Layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/teal_square"
+            android:orientation="vertical"
+            android:weightSum="4"
+            app:layout_constraintHeight_percent="0.257"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email1Layout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/tvEmailName2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:text="Club Name:"
+                    android:background="@drawable/whitish_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etEmailName2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4.5"
+                    android:background="@drawable/whitish_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/delete_button2Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@color/red"
+                    android:visibility="visible">
+
+                    <Button
+                        android:id="@+id/delete_button2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:text="Delete"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/tvRoomNumber2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:text="Room:"
+                    android:background="@drawable/whitish_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etRoomNumber2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7.5"
+                    android:background="@drawable/whitish_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/tvClassName2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:text="Meeting Time:"
+                    android:background="@drawable/whitish_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etClassName2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7.5"
+                    android:background="@drawable/whitish_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/tvTeacherName2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:text="Teacher Name:"
+                    android:background="@drawable/whitish_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etTeacherName2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4.5"
+                    android:background="@drawable/whitish_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/teacher2Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/whitish_square"
+                    android:visibility="visible">
+
+                    <Button
+                        android:id="@+id/save_button2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:text="Save"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/email3Layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/teal_square"
+            android:orientation="vertical"
+            android:weightSum="4"
+            app:layout_constraintHeight_percent="0.257"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email2Layout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/tvEmailName3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:text="Club Name:"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etEmailName3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4.5"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/delete_button3Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@color/red"
+                    android:visibility="visible">
+
+                    <Button
+                        android:id="@+id/delete_button3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:text="Delete"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/tvRoomNumber3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:text="Room:"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etRoomNumber3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7.5"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/tvClassName3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:text="Meeting Time:"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etClassName3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7.5"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/tvTeacherName3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:text="Teacher Name:"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etTeacherName3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4.5"
+                    android:background="@drawable/teal_square"
+                    android:textColor="#263238"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/teacher3Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/whitish_square"
+                    android:visibility="visible">
+
+                    <Button
+                        android:id="@+id/save_button3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:text="Save"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
