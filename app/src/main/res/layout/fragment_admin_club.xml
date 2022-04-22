@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2.125"
-                android:hint="Click To Enter an Meeting Time"
+                android:hint="Click To Enter an Email"
                 android:background="@drawable/teal_square"
                 android:textColor="@color/black"
                 android:textStyle="bold"/>
@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2.125"
-                android:hint="Click To Enter a Club Name"
+                android:hint="Click To Enter a Class Name"
                 android:background="@drawable/teal_square"
                 android:textColor="@color/black"
                 android:textStyle="bold"/>
@@ -74,6 +74,8 @@
                     android:visibility="visible">
 
                     <Button
+                        android:autoSizeMinTextSize="5sp"
+                        android:autoSizeTextType="uniform"
                         android:id="@+id/backButtonPopup"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -96,6 +98,8 @@
                     android:visibility="visible">
 
                     <Button
+                        android:autoSizeMinTextSize="5sp"
+                        android:autoSizeTextType="uniform"
                         android:id="@+id/saveButtonPopup"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -123,6 +127,8 @@
             android:visibility="visible">
 
             <Button
+                android:autoSizeMinTextSize="5sp"
+                android:autoSizeTextType="uniform"
                 android:id="@+id/add_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -152,6 +158,8 @@
                 android:background="@drawable/whitish_square">
 
                 <Button
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeTextType="uniform"
                     android:id="@+id/btnBack"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -174,6 +182,8 @@
                 android:background="@drawable/whitish_square">
 
                 <Button
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeTextType="uniform"
                     android:id="@+id/btnNext"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -199,7 +209,7 @@
                 android:layout_height="match_parent"
                 android:autoSizeTextType="uniform"
                 android:background="@drawable/whitish_square"
-                android:text="Click to Edit Club Profiles"
+                android:text="Click to Edit Teacher Profiles"
                 android:textAlignment="center"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -226,7 +236,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Club Name:"
+                    android:text="Class:"
                     android:background="@drawable/teal_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
@@ -249,6 +259,8 @@
                     android:visibility="visible">
 
                     <Button
+                        android:autoSizeMinTextSize="5sp"
+                        android:autoSizeTextType="uniform"
                         android:id="@+id/delete_button"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -272,7 +284,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Room:"
+                    android:text="Email:"
                     android:background="@drawable/teal_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
@@ -299,7 +311,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Meeting Time:"
+                    android:text="Room:"
                     android:background="@drawable/teal_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
@@ -349,6 +361,8 @@
                     android:visibility="visible">
 
                     <Button
+                        android:autoSizeMinTextSize="5sp"
+                        android:autoSizeTextType="uniform"
                         android:id="@+id/save_button"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -385,7 +399,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Club Name:"
+                    android:text="Class:"
                     android:background="@drawable/whitish_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
@@ -408,6 +422,8 @@
                     android:visibility="visible">
 
                     <Button
+                        android:autoSizeMinTextSize="5sp"
+                        android:autoSizeTextType="uniform"
                         android:id="@+id/delete_button2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -431,7 +447,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Room:"
+                    android:text="Email:"
                     android:background="@drawable/whitish_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
@@ -458,7 +474,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Meeting Time:"
+                    android:text="Room:"
                     android:background="@drawable/whitish_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
@@ -507,6 +523,8 @@
                     android:visibility="visible">
 
                     <Button
+                        android:autoSizeMinTextSize="5sp"
+                        android:autoSizeTextType="uniform"
                         android:id="@+id/save_button2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -544,7 +562,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Club Name:"
+                    android:text="Class:"
                     android:background="@drawable/teal_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
@@ -567,6 +585,8 @@
                     android:visibility="visible">
 
                     <Button
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="5sp"
                         android:id="@+id/delete_button3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -590,7 +610,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Room:"
+                    android:text="Email:"
                     android:background="@drawable/teal_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
@@ -617,7 +637,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2.5"
-                    android:text="Meeting Time:"
+                    android:text="Room:"
                     android:background="@drawable/teal_square"
                     android:textColor="#263238"
                     android:textStyle="bold" />
@@ -667,6 +687,8 @@
                     android:visibility="visible">
 
                     <Button
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="5sp"
                         android:id="@+id/save_button3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

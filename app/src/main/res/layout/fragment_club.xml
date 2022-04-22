@@ -27,12 +27,14 @@
                 android:background="@drawable/whitish_square">
 
                 <Button
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeTextType="uniform"
                     android:id="@+id/btnBack"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
                     android:text="Back"
-                    android:textColor="#808080"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -47,6 +49,8 @@
                 android:layout_weight="2"
                 android:background="@drawable/whitish_square">
                 <Button
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeTextType="uniform"
                     android:id="@+id/btnNext"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

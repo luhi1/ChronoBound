@@ -370,14 +370,14 @@ class emailFragment : Fragment() {
             emailBox.visibility = View.VISIBLE
             requireView().findViewById<EditText>(R.id.txtSub).setText("")
             requireView().findViewById<EditText>(R.id.txtMsg).setText("")
-            requireView().findViewById<TextView>(R.id.txtTo).text = requireView().findViewById<TextView>(R.id.tvClassName1).text.split("Email: ")[1].toString().filter { !it.isWhitespace() }
+            requireView().findViewById<TextView>(R.id.txtTo).text = requireView().findViewById<TextView>(R.id.tvClassName2).text.split("Email: ")[1].toString().filter { !it.isWhitespace() }
         }
         emailButton3.setOnClickListener {
             mainEmailScreen.visibility = View.INVISIBLE
             emailBox.visibility = View.VISIBLE
             requireView().findViewById<EditText>(R.id.txtSub).setText("")
             requireView().findViewById<EditText>(R.id.txtMsg).setText("")
-            requireView().findViewById<TextView>(R.id.txtTo).text = requireView().findViewById<TextView>(R.id.tvClassName1).text.split("Email: ")[1].toString().filter { !it.isWhitespace() }
+            requireView().findViewById<TextView>(R.id.txtTo).text = requireView().findViewById<TextView>(R.id.tvClassName3).text.split("Email: ")[1].toString().filter { !it.isWhitespace() }
         }
         btnBackEmail.setOnClickListener {
             mainEmailScreen.visibility = View.VISIBLE
@@ -385,7 +385,7 @@ class emailFragment : Fragment() {
         }
         btnSend.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(requireView().findViewById<TextView>(R.id.tvClassName1).text.split("Email: ")[1].toString().filter { !it.isWhitespace() }))
+            intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(requireView().findViewById<TextView>(R.id.txtTo).text))
             intent.putExtra(Intent.EXTRA_SUBJECT, requireView().findViewById<EditText>(R.id.txtSub).text.toString())
             intent.putExtra(Intent.EXTRA_TEXT, requireView().findViewById<EditText>(R.id.txtMsg).text.toString())
             intent.type = "message/rfc822"

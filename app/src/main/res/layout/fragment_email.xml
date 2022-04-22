@@ -73,11 +73,12 @@
                     android:visibility="visible">
 
                     <Button
+                        android:autoSizeMinTextSize="5sp"
                         android:id="@+id/email_button"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@android:color/transparent"
-
+                        android:autoSizeTextType="uniform"
                         android:text="Email"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
@@ -139,7 +140,6 @@
                     android:layout_height="match_parent"
                     android:layout_weight="4"
                     android:background="@drawable/whitish_square"
-                    android:textColor="#263238"
                     android:textStyle="bold" />
 
                 <RelativeLayout
@@ -151,11 +151,12 @@
                     android:visibility="visible">
 
                     <Button
+                        android:autoSizeMinTextSize="5sp"
                         android:id="@+id/email_button2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@android:color/transparent"
-
+                        android:autoSizeTextType="uniform"
                         android:text="Email"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
@@ -224,7 +225,9 @@
                     android:visibility="visible">
 
                     <Button
+                        android:autoSizeMinTextSize="5sp"
                         android:id="@+id/email_button3"
+                        android:autoSizeTextType="uniform"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@android:color/transparent"
@@ -281,12 +284,14 @@
                 android:background="@drawable/whitish_square">
 
                 <Button
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeTextType="uniform"
                     android:id="@+id/btnBackMain"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
                     android:text="Back"
-                    android:textColor="#808080"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -303,6 +308,8 @@
                 android:background="@drawable/whitish_square">
 
                 <Button
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeTextType="uniform"
                     android:id="@+id/btnNext"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -329,6 +336,8 @@
 
         <TextView
             android:id="@+id/txtTo"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="1sp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3"
@@ -372,6 +381,8 @@
                 android:background="@drawable/teal_square">
 
                 <Button
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeTextType="uniform"
                     android:id="@+id/btnBackEmail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -395,6 +406,8 @@
                 android:background="@drawable/teal_square">
 
                 <Button
+                    android:autoSizeMinTextSize="5sp"
+                    android:autoSizeTextType="uniform"
                     android:id="@+id/btnSend"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
