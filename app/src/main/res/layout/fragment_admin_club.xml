@@ -660,12 +660,12 @@
                     android:visibility="visible">
 
                     <Button
-                        android:autoSizeTextType="uniform"
-                        android:autoSizeMinTextSize="5sp"
-                        android:autoSizeMaxTextSize="15sp"
                         android:id="@+id/delete_button3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:autoSizeMaxTextSize="15sp"
+                        android:autoSizeMinTextSize="5sp"
+                        android:autoSizeTextType="uniform"
                         android:background="@android:color/transparent"
                         android:text="Delete"
                         android:textAlignment="center"
