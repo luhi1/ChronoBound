@@ -9,11 +9,12 @@
 * Android 5.0+
 * Internet connection
 ### How to install
-1. Download chronobound1.0.apk from here
+1. Download chronobound1.0.apk from [here](https://github.com/luhi1/ChronoBound/blob/master/chronobound1.0.apk)
 2. Turn off [play protect](https://support.google.com/googleplay/answer/2812853?hl=en#:~:text=Turn,off) if necessary
-3. Open .apk file, allow installation from your browser
+3. Open the .apk file; allow installation from your browser if necessary
 ## Usage notes
 * Enter admin account for admin screens and student account for student screens
+* 
 ## Acknowledgements
 * [No-Name Arts](https://www.instagram.com/no_name_crafts) - made logo/app icon
 ### Built with
