@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Jivko/AndroidStudioProjects/ChronoBoundDemo1/app/src/main/res/drawable/gray_square.xml" value="0.139" />
+        <entry key="..\:/Users/Jivko/AndroidStudioProjects/ChronoBoundDemo1/app/src/main/res/drawable/whitish_square.xml" value="0.1" />
+        <entry key="..\:/Users/Jivko/AndroidStudioProjects/ChronoBoundDemo1/app/src/main/res/layout/fragment_schedule.xml" value="0.1" />
         <entry key="..\:/Users/Jivko/AndroidStudioProjects/ChronoBoundDemoFile/app/src/main/res/layout/activity_admin_calendar.xml" value="0.1" />
         <entry key="..\:/Users/Jivko/AndroidStudioProjects/ChronoBoundDemoFile/app/src/main/res/layout/fragment_admin_club.xml" value="0.1" />
         <entry key="..\:/Users/Jivko/AndroidStudioProjects/ChronoBoundDemoFile/app/src/main/res/layout/fragment_admin_email.xml" value="0.1" />
