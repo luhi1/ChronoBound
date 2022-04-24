@@ -31,6 +31,7 @@ class adminCalendarActivity : AppCompatActivity() {
         val exitButton = findViewById<ImageView>(R.id.exitButton)
 
         exitButton.setOnClickListener(){
+            finish()
             Firebase.auth.signOut()
             startActivity(Intent(this@adminCalendarActivity, LoginActivity::class.java))
         }

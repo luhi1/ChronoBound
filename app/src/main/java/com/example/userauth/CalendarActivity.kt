@@ -35,6 +35,7 @@ class CalendarActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
 
         exitButton.setOnClickListener(){
+            finish()
             Firebase.auth.signOut()
             startActivity(Intent(this@CalendarActivity, LoginActivity::class.java))
         }
