@@ -17,7 +17,7 @@
 |email:|password:|admin?:|
 | --- | --- | --- |
 |aliceistestingusers@example.com|password|no|
-|admin@gmail.com||yes|
+|admin@gmail.com|admin1|yes|
 ### ChronoBound sections
 * Calendar - students can get school information about daily events
 * Scheduler - students can input their schedules by clicking on a day of the week
