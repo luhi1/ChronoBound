@@ -4,23 +4,21 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 
 //code basically taken from https://www.youtube.com/watch?v=8I5gCLaS25w, some if was my own work tho.
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        val tv_register = findViewById<TextView>(R.id.tv_register)
-        val btn_login = findViewById<Button>(R.id.btn_login)
-        val et_login_email = findViewById<EditText>(R.id.et_login_email)
-        val et_login_password = findViewById<EditText>(R.id.et_login_password)
+        val tv_register = findViewById<TextView>(R.id.tv_login)
+        val btn_login = findViewById<Button>(R.id.btn_register)
+        val et_login_email = findViewById<EditText>(R.id.til_register_email)
+        val et_login_password = findViewById<EditText>(R.id.til_register_password)
 
         tv_register.setOnClickListener{
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
