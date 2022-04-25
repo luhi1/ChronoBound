@@ -9,7 +9,7 @@
 * Android 5.0+
 * Internet connection
 ### How to install
-1. Download chronobound1.0.apk from [here](https://github.com/luhi1/ChronoBound/blob/master/chronobound1.0.apk)
+1. Download chronoBound1.0.apk from [here](https://github.com/luhi1/ChronoBound/blob/master/chronoBound1.0.apk)
 2. Turn off [play protect](https://support.google.com/googleplay/answer/2812853?hl=en#:~:text=Turn,off) if necessary
 3. Open the .apk file; allow installation from your browser if necessary
 ## Usage notes
