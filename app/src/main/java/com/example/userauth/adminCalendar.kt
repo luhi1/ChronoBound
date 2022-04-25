@@ -270,7 +270,7 @@ class adminCalendar : Fragment() {
             myRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     myRef.setValue(inpu)
-                    Toast.makeText(activity, "events added", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity!!, "events added", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onCancelled(error: DatabaseError) {

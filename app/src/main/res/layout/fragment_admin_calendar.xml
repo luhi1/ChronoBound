@@ -4,9 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".adminCalendar">
-
     <LinearLayout
-        android:id="@+id/calenV"
+        android:id="@+id/calenLn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -19,31 +18,18 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:weightSum="1"
-            android:background="@drawable/whitish_square"
             android:layout_height="0dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/mnthTx"
                 android:layout_width="0dp"
-                android:background="@drawable/whitish_square"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-black"
                 android:text="January"
                 android:gravity="center"
                 android:textSize="24sp" />
-            <!--<TextView
-                android:id="@+id/yearTx"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="2022"
-                android:fontFamily="sans-serif-black"
-                android:textSize="24sp"
-                 />
-        -->
 
 
         </LinearLayout>
@@ -721,30 +707,33 @@
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/dark_blue_square"
-                android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/dark_blue_square">
 
-                <Button
-                    android:id="@+id/backBt"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:text="Back" /></RelativeLayout>
+            <Button
+                android:background="@android:color/transparent"
+                android:id="@+id/backBt"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Back"
+                /></RelativeLayout>
             <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="2" > </Space>
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/dark_blue_square"
-                android:layout_weight="1"><Button
-                android:id="@+id/nextBt"
-                android:layout_width="match_parent"
-                android:background="@android:color/transparent"
                 android:layout_weight="1"
-                android:layout_height="match_parent"
+                android:background="@drawable/dark_blue_square">
 
-                android:text="Next"
-                /></RelativeLayout>
+            <Button
+                android:id="@+id/nextBt"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                android:text="Next" />
+            </RelativeLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -761,13 +750,14 @@
 
 
 
+
+
     <LinearLayout
-        android:id="@+id/popupV"
+        android:id="@+id/popupLn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="8">
-
+        android:weightSum="11">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_weight="1"
@@ -778,17 +768,16 @@
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/dark_blue_square"
-                android:layout_weight="1">
-                <Button
-                    android:id="@+id/predBt"
-                    android:background="@android:color/transparent"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="&#60;"/>
+                android:layout_weight="1"
+                android:background="@drawable/dark_blue_square">
+            <Button
+                android:id="@+id/predBt"
+                android:layout_width="match_parent"
+                android:background="@android:color/transparent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="&#60;"/>
             </RelativeLayout>
-
             <TextView
                 android:id="@+id/pdayTx"
                 android:layout_width="0dp"
@@ -802,119 +791,174 @@
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/dark_blue_square"
-                android:layout_weight="1">
-                <Button
-                    android:id="@+id/nexdBt"
-                    android:background="@android:color/transparent"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="&#62;"/>
-            </RelativeLayout>
-        </LinearLayout>
-        <TextView
-            android:background="@drawable/whitish_square"
-            android:id="@+id/evnTTx"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".5"
-            android:textSize="20sp"
-            android:text="Events:"/>
-        <LinearLayout
-            android:background="@drawable/whitish_square"
-            android:id="@+id/evnlsV"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:orientation="vertical"
-            android:weightSum="8">
-            <TextView
-                android:id="@+id/evn1Tx"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:textSize="16sp"
-                android:textStyle="italic"
-                android:text=""/>
-            <TextView
-                android:id="@+id/des1Tx"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text=""/>
-            <TextView
-                android:id="@+id/evn2Tx"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textSize="16sp"
-                android:textStyle="italic"
-                android:text=""/>
-            <TextView
-                android:id="@+id/des2Tx"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text=""/>
-            <TextView
-                android:id="@+id/evn3Tx"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textSize="16sp"
-                android:textStyle="italic"
-                android:text=""/>
-            <TextView
-                android:id="@+id/des3Tx"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text=""/>
-            <TextView
-                android:id="@+id/evn4Tx"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textSize="16sp"
-                android:textStyle="italic"
-                android:text=""/>
-            <TextView
-                android:id="@+id/des4Tx"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text=""/>
-        </LinearLayout>
-        <TextView
-            android:background="@drawable/whitish_square"
-            android:id="@+id/nteTTx"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".5"
-            android:textSize="20sp"
-            android:text="Note:"/>
-        <TextView
-            android:background="@drawable/whitish_square"
-            android:id="@+id/ppupTx"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text=""/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@drawable/dark_blue_square"
-            android:layout_weight="1">
-            <Button
-                android:id="@+id/bktcBt"
+                android:background="@drawable/dark_blue_square"><Button
+                android:id="@+id/nexdBt"
                 android:background="@android:color/transparent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Back to calendar"/>
-        </RelativeLayout>
-    </LinearLayout>
+                android:text="&#62;"/></RelativeLayout>
 
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="5"
+            android:orientation="horizontal"
+
+            >
+            <Button
+                android:id="@+id/boldBt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="bold"/>
+
+
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/evnlsLn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:orientation="vertical"
+            android:weightSum="8">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/evni1Ed"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter name"
+                android:isScrollContainer="true"
+                android:padding="1dp"
+                android:textSize="12sp"
+                android:layout_weight="1"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/desi1Ed"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter description"
+                android:isScrollContainer="true"
+                android:padding="1dp"
+                android:textSize="12sp"
+                android:layout_weight="1"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/evni2Ed"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter name"
+                android:isScrollContainer="true"
+                android:padding="1dp"
+                android:textSize="12sp"
+                android:layout_weight="1"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/desi2Ed"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter description"
+                android:isScrollContainer="true"
+                android:padding="1dp"
+                android:textSize="12sp"
+                android:layout_weight="1"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/evni3Ed"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter name"
+                android:padding="1dp"
+                android:textSize="12sp"
+                android:isScrollContainer="true"
+                android:layout_weight="1"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/desi3Ed"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter description"
+                android:padding="1dp"
+                android:textSize="12sp"
+                android:isScrollContainer="true"
+                android:layout_weight="1"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/evni4Ed"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter name"
+                android:padding="1dp"
+                android:textSize="12sp"
+                android:isScrollContainer="true"
+                android:layout_weight="1"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/desi4Ed"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter description"
+                android:isScrollContainer="true"
+                android:padding="1dp"
+                android:textSize="12sp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter note"
+                android:isScrollContainer="true"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--<TextView
+            android:id="@+id/ppupTx"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:text=""/>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="3"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/dark_blue_square">
+            <Button
+                android:id="@+id/insuBt"
+                android:layout_width="match_parent"
+                android:background="@android:color/transparent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Submit"/></RelativeLayout>
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/dark_blue_square">
+            <Button
+                android:id="@+id/bktcBt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="Back to calendar"/></RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
 </FrameLayout>
