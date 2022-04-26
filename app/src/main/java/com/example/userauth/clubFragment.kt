@@ -20,6 +20,7 @@ import java.util.stream.IntStream.range
 
 class clubFragment : Fragment() {
 
+    //declares class variables.
     private val myRef = FirebaseDatabase.getInstance().getReference("clubActivity")
     private lateinit var databaseListener: ValueEventListener
     private var clubNumber = -2
@@ -38,6 +39,7 @@ class clubFragment : Fragment() {
 
     override fun onStart(){
         super.onStart()
+        //imports xml attributes as variables
         val clubName1 = requireView().findViewById<TextView>(R.id.tvEmailName1)
         val clubName2 = requireView().findViewById<TextView>(R.id.tvEmailName2)
         val clubName3 = requireView().findViewById<TextView>(R.id.tvEmailName3)
@@ -53,6 +55,7 @@ class clubFragment : Fragment() {
         val backButton = requireView().findViewById<Button>(R.id.btnBack)
         val nextButton = requireView().findViewById<Button>(R.id.btnNext)
 
+        //clears a club from the screen.
         fun clearScreen(clubName: TextView, roomNumber: TextView, meetingTime: TextView, teacherName: TextView) {
             clubName.text = " "
             roomNumber.text = " "
@@ -60,6 +63,7 @@ class clubFragment : Fragment() {
             teacherName.text = " "
         }
 
+        //gets and displays all sub-attributes of a club.
         fun getValueFromDatabase(uidNumber: Int, clubName: TextView, roomNumber: TextView, meetingTime: TextView, teacherName: TextView){
             val databaseSearchReference = myRef.child("clubNumber$uidNumber")
             val clubNameDB = databaseSearchReference.child("clubName")
@@ -159,6 +163,8 @@ class clubFragment : Fragment() {
             })
         }
 
+        //This function is called to update a certain amount of clubs.
+        //Passing a 1 results in 3 clubs being displayed, 2 2, and 1 3.
         fun getVals(num:Int){
             clearScreen(clubName1, roomNumber1, meetingTime1, teacherName1)
             clearScreen(clubName2, roomNumber2, meetingTime2, teacherName2)
@@ -177,11 +183,14 @@ class clubFragment : Fragment() {
                 clearScreen(clubName3, roomNumber3, meetingTime3, teacherName3)
             }
         }
+
+        //listens for change in the database
         databaseListener = myRef.child("funValue").addValueEventListener(object : ValueEventListener {
             @RequiresApi(Build.VERSION_CODES.N)
             override fun onDataChange(myRefSnapshot: DataSnapshot) {
                 myRef.addListenerForSingleValueEvent(object: ValueEventListener{
                     override fun onDataChange(snapshot: DataSnapshot) {
+                        //creates a local version of the club database and filters it into variables.
                         clubList = mutableListOf()
                         var joe = snapshot.children
                         var iteratorNum = 0
@@ -229,6 +238,7 @@ class clubFragment : Fragment() {
                         for (i in range (1, (emailList.size)+1)){
                             numericalEmailMap[emailList[i-1]]?.let { clubList.add(it) }
                         }
+                        //determines how many, if any, clubs to display.
                         if (clubNumber+2 == 0){
                             clubNumber = emailNumberSnapshot
                             if (clubList.size >= 3){
@@ -299,6 +309,7 @@ class clubFragment : Fragment() {
             }
         })
 
+        //updates currentClub and displays the next club(s) in the list.
         nextButton.setOnClickListener{
             if ((((currentClub+1)%3) == 0) && (currentClub+2 <= clubList.size)){
                 if (((currentClub+4)%3 == 0) && (currentClub+4 <= clubList.size)){
@@ -319,6 +330,7 @@ class clubFragment : Fragment() {
                 ).show()
             }
         }
+        //updates currentClub and displays the previous clubs in the list.
         backButton.setOnClickListener{
             if ((currentClub-3)+1 != 0) {
                 if (((currentClub + 1) % 3) != 0) {

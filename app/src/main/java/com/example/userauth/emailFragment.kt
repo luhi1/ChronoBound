@@ -20,6 +20,7 @@ import java.util.stream.IntStream.range
 
 class emailFragment : Fragment() {
 
+    //declare variables.
     private val myRef = FirebaseDatabase.getInstance().getReference("emailActivity")
     private lateinit var databaseListener: ValueEventListener
     private var clubNumber = -2
@@ -40,6 +41,7 @@ class emailFragment : Fragment() {
 
     override fun onStart(){
         super.onStart()
+        //import xml attributes as variables.
         val etclubName1 = requireView().findViewById<TextView>(R.id.tvEmailName1)
         val etclubName2 = requireView().findViewById<TextView>(R.id.tvEmailName2)
         val etclubName3 = requireView().findViewById<TextView>(R.id.tvEmailName3)
@@ -67,6 +69,7 @@ class emailFragment : Fragment() {
         var message = ""
         var emailNum = 0
 
+        //clears all sub-attributes of a club from the screen.
         fun clearScreen(clubName: TextView, roomNumber: TextView, meetingTime: TextView, teacherName: TextView) {
             clubName.text = " "
             roomNumber.text = " "
@@ -74,6 +77,7 @@ class emailFragment : Fragment() {
             teacherName.text = " "
         }
 
+        //displays and gets all sub_attributes of a club from the screen.
         fun getValueFromDatabase(uidNumber: Int, clubName: TextView, roomNumber: TextView, meetingTime: TextView, teacherName: TextView){
             val databaseSearchReference = myRef.child("emailNumber$uidNumber")
             val clubNameDB = databaseSearchReference.child("class")
@@ -173,6 +177,8 @@ class emailFragment : Fragment() {
             })
         }
 
+        //This function is called to update a certain amount of emails.
+        //Passing a 1 results in 3 emails being displayed, 2 2, and 1 3.
         fun getVals(num:Int){
             clearScreen(etclubName1, etroomNumber1, etmeetingTime1, etteacherName1)
             clearScreen(etclubName2, etroomNumber2, etmeetingTime2, etteacherName2)
@@ -197,11 +203,13 @@ class emailFragment : Fragment() {
                 emailButton3.isClickable = false
             }
         }
+        //listens for change in the funValue
         databaseListener = myRef.child("funValue").addValueEventListener(object : ValueEventListener {
             @RequiresApi(Build.VERSION_CODES.N)
             override fun onDataChange(myRefSnapshot: DataSnapshot) {
                 myRef.addListenerForSingleValueEvent(object: ValueEventListener{
                     override fun onDataChange(snapshot: DataSnapshot) {
+                        //creates a local copy of the emailFragment part of the database and filters it into variables.
                         clubList = mutableListOf()
                         var joe = snapshot.children
                         var iteratorNum = 0
@@ -250,6 +258,7 @@ class emailFragment : Fragment() {
                             numericalEmailMap[emailList[i-1]]?.let { clubList.add(it) }
                         }
 
+                        //determines how many, if any, clubs to display.
                         if (clubNumber+2 == 0){
                             clubNumber = emailNumberSnapshot
                             if (clubList.size >= 3){
@@ -320,6 +329,7 @@ class emailFragment : Fragment() {
             }
         })
 
+        //updates currentClub and displays the next email(s) in the list.
         nextButton.setOnClickListener{
             if ((((currentClub+1)%3) == 0) && (currentClub+2 <= clubList.size)){
                 if (((currentClub+4)%3 == 0) && (currentClub+4 <= clubList.size)){
@@ -340,6 +350,8 @@ class emailFragment : Fragment() {
                 ).show()
             }
         }
+
+        //updates currentClub and displays the previous emails in the list.
         backButton.setOnClickListener{
             if ((currentClub-3)+1 != 0) {
                 if (((currentClub + 1) % 3) != 0) {
@@ -358,6 +370,8 @@ class emailFragment : Fragment() {
             }
 
         }
+
+        //shows the email popup and imports the first email into the "to" section section of the pop up.
         emailButton1.setOnClickListener {
             mainEmailScreen.visibility = View.INVISIBLE
             emailBox.visibility = View.VISIBLE
@@ -365,6 +379,8 @@ class emailFragment : Fragment() {
             requireView().findViewById<EditText>(R.id.txtMsg).setText("")
             requireView().findViewById<TextView>(R.id.txtTo).text = requireView().findViewById<TextView>(R.id.tvClassName1).text.split("Email: ")[1].toString().filter { !it.isWhitespace() }
         }
+
+        //shows the email popup and imports the second email into the "to" section section of the pop up.
         emailButton2.setOnClickListener {
             mainEmailScreen.visibility = View.INVISIBLE
             emailBox.visibility = View.VISIBLE
@@ -372,6 +388,8 @@ class emailFragment : Fragment() {
             requireView().findViewById<EditText>(R.id.txtMsg).setText("")
             requireView().findViewById<TextView>(R.id.txtTo).text = requireView().findViewById<TextView>(R.id.tvClassName2).text.split("Email: ")[1].toString().filter { !it.isWhitespace() }
         }
+
+        //shows the email popup and imports the third email into the "to" section section of the pop up.
         emailButton3.setOnClickListener {
             mainEmailScreen.visibility = View.INVISIBLE
             emailBox.visibility = View.VISIBLE
@@ -379,10 +397,14 @@ class emailFragment : Fragment() {
             requireView().findViewById<EditText>(R.id.txtMsg).setText("")
             requireView().findViewById<TextView>(R.id.txtTo).text = requireView().findViewById<TextView>(R.id.tvClassName3).text.split("Email: ")[1].toString().filter { !it.isWhitespace() }
         }
+
+        //closes the email popup and goes back to the main screen.
         btnBackEmail.setOnClickListener {
             mainEmailScreen.visibility = View.VISIBLE
             emailBox.visibility = View.INVISIBLE
         }
+
+        //takes the values from the email popup and imports them into a user selected email client using rfc822.
         btnSend.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
             intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(requireView().findViewById<TextView>(R.id.txtTo).text.toString()))
@@ -397,6 +419,7 @@ class emailFragment : Fragment() {
 
     override fun onStop(){
         super.onStop()
+        //Snaps all listeners.
         myRef.removeEventListener(databaseListener)
     }
 }

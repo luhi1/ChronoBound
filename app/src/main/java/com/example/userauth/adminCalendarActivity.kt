@@ -23,18 +23,22 @@ import com.google.firebase.ktx.Firebase
 
 class adminCalendarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        //Inflates Layout
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_calendar)
 
+        //Declares variables
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val navController = findNavController(R.id.fragmentContainerView)
         val exitButton = findViewById<ImageView>(R.id.exitButton)
 
+        //Adds logout functionality
         exitButton.setOnClickListener(){
             Firebase.auth.signOut()
             startActivity(Intent(this@adminCalendarActivity, LoginActivity::class.java))
         }
 
+        //Gets the bottom bar navigation working
         bottomNavigationView.setupWithNavController(navController)
 
     }

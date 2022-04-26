@@ -14,6 +14,9 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
 
 //code basically taken from https://www.youtube.com/watch?v=8I5gCLaS25w, a lot of it was my own changes too.
+//basically, it creates an account if you do not have the same credentials of a user in the database. Otherwise
+//it outputs a host of errors (toasts) based on the different conditions met.
+//Also, if you click on the login button, it takes you the login screen.
 class RegisterActivity : AppCompatActivity() {
     @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {

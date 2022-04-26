@@ -20,6 +20,7 @@ import java.util.stream.IntStream.range
 
 class adminClub : Fragment() {
 
+    //Declare class variables
     private val myRef = FirebaseDatabase.getInstance().getReference("clubActivity")
     private lateinit var databaseListener: ValueEventListener
     private var clubNumber = -2
@@ -36,10 +37,13 @@ class adminClub : Fragment() {
         return inflater.inflate(R.layout.fragment_admin_club, container, false)
     }
 
+    //Coroutines is experimental, but its working for our app.
     @OptIn(InternalCoroutinesApi::class)
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onStart(){
         super.onStart()
+
+        //import xml attributes as variables.
         val etclubName1 = requireView().findViewById<TextView>(R.id.etEmailName1)
         val etclubName2 = requireView().findViewById<TextView>(R.id.etEmailName2)
         val etclubName3 = requireView().findViewById<TextView>(R.id.etEmailName3)
@@ -70,18 +74,25 @@ class adminClub : Fragment() {
         val saveButtonPopup = requireView().findViewById<Button>(R.id.saveButtonPopup)
         val backButtonPopup = requireView().findViewById<Button>(R.id.backButtonPopup)
         var funValue:Boolean
+
+        //creates a listener for change in the clubActivity funValue.
         myRef.child("funValue").addListenerForSingleValueEvent(object: ValueEventListener{
             override fun onDataChange(clubNumbersnapshot: DataSnapshot) {
                 funValue = clubNumbersnapshot.getValue<Boolean>()!!
+
+                //displays the add a club layout on clicking the add a club button.
                 add_button.setOnClickListener{
                     mainView.visibility = View.INVISIBLE
                     popupView.visibility = View.VISIBLE
                 }
+
+                //adds save button for the add a club popup functionality
                 saveButtonPopup.setOnClickListener{
                     if (etclassPopup.text.toString() != "" && etEmailPopup.toString() != "" && etRoomNumberPopup.text.toString() != "" && etRoomNumberPopup.text.toString()!= "" ) {
                         myRef.child("clubNumber")
                             .addListenerForSingleValueEvent(object : ValueEventListener {
                                 override fun onDataChange(clubNumbersnapshot: DataSnapshot) {
+                                    //creates a new club based on the values provided in the add a club layout.
                                     val value = clubNumbersnapshot.getValue<Int>()!! + 1
                                     myRef.child("clubNumber$value").child("clubName")
                                         .setValue(etclassPopup.text.toString())
@@ -93,12 +104,16 @@ class adminClub : Fragment() {
                                         .setValue(etTeacherNamePopup.text.toString())
                                     myRef.child("clubNumber$value").child("visible").setValue(true)
                                     myRef.child("clubNumber").setValue(value)
+
+                                    //resets the text values in the popup and then returns back to the main screen.
                                     etclassPopup.setText("")
                                     etRoomNumberPopup.setText("")
                                     etEmailPopup.setText("")
                                     etTeacherNamePopup.setText("")
                                     mainView.visibility = View.VISIBLE
                                     popupView.visibility = View.INVISIBLE
+
+                                    //updates fun value
                                     if (funValue == true) {
                                         funValue = false
                                     } else {
@@ -118,6 +133,7 @@ class adminClub : Fragment() {
 
                             })
                     } else {
+                        //Yells at the user for a blank value
                         Toast.makeText(
                             activity,
                             "You cannot leave a value blank",
@@ -125,6 +141,9 @@ class adminClub : Fragment() {
                         ).show()
                     }
                 }
+
+                //returns you to the main screen from the popup.
+                //clears all attributes of the popup screen.
                 backButtonPopup.setOnClickListener{
                     etclassPopup.setText("")
                     etRoomNumberPopup.setText("")
@@ -134,6 +153,7 @@ class adminClub : Fragment() {
                     popupView.visibility = View.INVISIBLE
                 }
 
+                //saves any changes to the first club and updates the funValue.
                 saveButton1.setOnClickListener{
                     val clubUid = clubList[((currentClub-(currentClub%3))+1)-1]
                     myRef.child("clubNumber$clubUid").child("clubName").setValue(etclubName1.text.toString().trim())
@@ -147,6 +167,8 @@ class adminClub : Fragment() {
                     }
                     myRef.child("funValue").setValue(funValue)
                 }
+
+                //saves any changes to the second  club and updates the funValue.
                 saveButton2.setOnClickListener(){
                     val clubUid = clubList[((currentClub-(currentClub%3))+2)-1]
                     myRef.child("clubNumber$clubUid").child("clubName").setValue(etclubName2.text.toString().trim())
@@ -160,6 +182,8 @@ class adminClub : Fragment() {
                     }
                     myRef.child("funValue").setValue(funValue)
                 }
+
+                //saves any changes to the third club and updates the funValue.
                 saveButton3.setOnClickListener(){
                     val clubUid = currentClub
                     myRef.child("clubNumber$clubUid").child("clubName").setValue(etclubName3.text.toString().trim())
@@ -173,6 +197,8 @@ class adminClub : Fragment() {
                     }
                     myRef.child("funValue").setValue(funValue)
                 }
+
+                //changes the visibility of the first club to false and updates the funValue
                 deleteButton1.setOnClickListener{
                     val clubUid = clubList[((currentClub-(currentClub%3))+1)-1]
                     if ((currentClub+1)-1 != 0) {
@@ -187,6 +213,8 @@ class adminClub : Fragment() {
                     }
                     myRef.child("funValue").setValue(funValue)
                 }
+
+                //changes the visibility of the second club to false and updates the funValue
                 deleteButton2.setOnClickListener(){
                     val clubUid = clubList[((currentClub-(currentClub%3))+2)-1]
                     if ((currentClub+1)-1 != 0) {
@@ -201,6 +229,8 @@ class adminClub : Fragment() {
                     }
                     myRef.child("funValue").setValue(funValue)
                 }
+
+                //changes the visibility of the third club to false and updates the funValue
                 deleteButton3.setOnClickListener(){
                     val clubUid = clubList[currentClub]
                     if ((currentClub+1)-1 != 0) {
@@ -227,6 +257,7 @@ class adminClub : Fragment() {
             }
         })
 
+        //Clears the 4 attributes of a club
         fun clearScreen(clubName: TextView, roomNumber: TextView, meetingTime: TextView, teacherName: TextView) {
             clubName.text = " "
             roomNumber.text = " "
@@ -234,6 +265,7 @@ class adminClub : Fragment() {
             teacherName.text = " "
         }
 
+        //Displays and get the 4 sub-attributes of a club.
         fun getValueFromDatabase(uidNumber: Int, clubName: TextView, roomNumber: TextView, meetingTime: TextView, teacherName: TextView){
             val databaseSearchReference = myRef.child("clubNumber$uidNumber")
             val clubNameDB = databaseSearchReference.child("clubName")
@@ -333,6 +365,8 @@ class adminClub : Fragment() {
             })
         }
 
+        //This function is called to update a certain amount of clubs.
+        //Passing a 1 results in 3 clubs being displayed, 2 2, and 1 3.
         fun getVals(num:Int){
             clearScreen(etclubName1, etroomNumber1, etmeetingTime1, etteacherName1)
             clearScreen(etclubName2, etroomNumber2, etmeetingTime2, etteacherName2)
@@ -364,11 +398,13 @@ class adminClub : Fragment() {
             }
         }
 
+        //Creates a listener for change in the funValue.
         databaseListener = myRef.child("funValue").addValueEventListener(object : ValueEventListener {
             @RequiresApi(Build.VERSION_CODES.N)
             override fun onDataChange(myRefSnapshot: DataSnapshot) {
                 myRef.addListenerForSingleValueEvent(object: ValueEventListener{
                     override fun onDataChange(snapshot: DataSnapshot) {
+                        //the code below creates a local copy of the database and filters it into variables.
                         clubList = mutableListOf()
                         var joe = snapshot.children
                         var iteratorNum = 0
@@ -416,6 +452,7 @@ class adminClub : Fragment() {
                         for (i in range (1, (emailList.size)+1)){
                             numericalEmailMap[emailList[i-1]]?.let { clubList.add(it) }
                         }
+                        //The code below determines how many clubs to display, if any.
                         if (clubNumber+2 == 0){
                             clubNumber = emailNumberSnapshot
                             if (clubList.size >= 3){
@@ -486,6 +523,7 @@ class adminClub : Fragment() {
             }
         })
 
+        //The code below updates the currentClub values and basically goes forward in the list of clubs.
         nextButton.setOnClickListener{
             if ((((currentClub+1)%3) == 0) && (currentClub+2 <= clubList.size)){
                 if (((currentClub+4)%3 == 0) && (currentClub+4 <= clubList.size)){
@@ -506,6 +544,8 @@ class adminClub : Fragment() {
                 ).show()
             }
         }
+
+        //The code below updates the currentClub values and goes backward in the list of clubs.
         backButton.setOnClickListener{
             if ((currentClub-3)+1 != 0) {
                 if (((currentClub + 1) % 3) != 0) {
@@ -528,6 +568,7 @@ class adminClub : Fragment() {
 
     override fun onStop(){
         super.onStop()
+        //Snaps all listeners.
         myRef.removeEventListener(databaseListener)
     }
 }
