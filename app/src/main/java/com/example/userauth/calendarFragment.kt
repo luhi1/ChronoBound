@@ -149,24 +149,28 @@ class calendarFragment : Fragment() {
 
 
 
+        //used to get help get the time
         val current = LocalDateTime.now()
 
         var year = Integer.parseInt(current.format(DateTimeFormatter.ofPattern("YYYY")))
         var month = Integer.parseInt(current.format(DateTimeFormatter.ofPattern("MM"))) - 1
         var day = Integer.parseInt(current.format(DateTimeFormatter.ofPattern("dd")))
         val monthlist = arrayOf("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+        //used to see how far we need to shift the days in the calendar for the month to line up w/ week
         val shiftList = arrayOf(0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4)
         var mLenList = arrayOf(31,28,31,30,31,30,31,31,30,31,30,31)
-
+        
+        //essential function that gives every day its appropriate number, and hides days that aren't used
         fun hideNFixDayNums() {
             mnthTx.text = monthlist[month] + " " + year.toString()
-
+            //traverses day relativelayouts in order to give them their appropriate background
             for (i in dayRlList) {
                 //i.text = ""
                 i.setBackground(activity?.let { ContextCompat.getDrawable(it, R.drawable.dark_blue_square) })
 
                 i.isVisible = false
             }
+            //clears day buttons text so no cross-day interference occurs
             for (i in dayBtList) {
                 i.text = ""
                 //i.setBackground(ContextCompat.getDrawable(this, R.color.transparent))
@@ -175,24 +179,27 @@ class calendarFragment : Fragment() {
             }
 
 
+            //includes leap day
             if (year % 4 == 0){
                 mLenList[1] = 29
             }
 
+            //temporary variable for calculating the shift
             var year2 = year
 
             if (month < 2) {
                 year2 -= 1
             }
-
             var shift = (year2 + year2/4 - year2/100 + year2/400 + shiftList[month] + 1) % 7
 
             var monthlength = mLenList[month]
+            //traverses to set the correct days visible and give them the correct number
             for (i in 1..monthlength) {
                 dayRlList[(i + shift - 1)].isVisible = true
                 dayBtList[(i + shift - 1)].isVisible = true
 
                 dayBtList[(i + shift - 1)].text = i.toString()
+                //colors current day
                 if (i == Integer.parseInt(current.format(DateTimeFormatter.ofPattern("dd"))) && month == Integer.parseInt(current.format(
                         DateTimeFormatter.ofPattern("MM"))) - 1) {
                     dayRlList[(i + shift - 1)].setBackground(activity?.let {
@@ -205,7 +212,7 @@ class calendarFragment : Fragment() {
             }
         }
 
-
+        //code for getting value from firebase
         fun getValueFromDatabase(path: List<String>, reference: String, tvid: TextView){
 
             myRef = FirebaseDatabase.getInstance().getReference(reference)
@@ -221,6 +228,7 @@ class calendarFragment : Fragment() {
                     // whenever data at this location is updated.
 
                     val value = dataSnapshot.getValue<String>()
+                    //taken code segment end
                     if (value == null){
                         tvid.text = ""
                     } else if (tvid == ppupTx) {
@@ -238,7 +246,7 @@ class calendarFragment : Fragment() {
             })
         }
 
-
+        //makes daily view/pop up invisible
         popupV.isVisible = false
 
 
@@ -246,12 +254,14 @@ class calendarFragment : Fragment() {
 
 
         backBt.setOnClickListener {
+            //goes to previous year if on first month
             if (month == 0){
                 year -= 1
             }
 
             month -= 1
-
+            
+            //allows negative numbers to work
             while (month < 0){
                 month += 12
             }
@@ -265,6 +275,7 @@ class calendarFragment : Fragment() {
 
 
         nextBt.setOnClickListener {
+            //goes to previous year if on first month
             if (month == 11){
                 year += 1
             }
@@ -276,6 +287,7 @@ class calendarFragment : Fragment() {
             hideNFixDayNums()
         }
 
+        //fills in daily view events
         fun fillintext(){
             getValueFromDatabase(listOf(monthlist[month], day.toString(), "note"), "calActivity", ppupTx)
             getValueFromDatabase(listOf(monthlist[month], day.toString(), "event1", "description"), "calActivity", des1Tx)
@@ -289,6 +301,7 @@ class calendarFragment : Fragment() {
 
             pdayTx.text = monthlist[month] + " " + day.toString()
         }
+        //sets up all the listeners for day buttons
         for (i in dayBtList) {
 
             i.setOnClickListener {
@@ -307,13 +320,16 @@ class calendarFragment : Fragment() {
             }
         }
 
-
+        //goes to day before
         predBt.setOnClickListener {
+            //if its the first day go to previous month
             if (day == 1){
+                //if its the first month go to previous year
                 if (month == 0){
                     year -= 1
                 }
                 month -= 1
+                //allows negative numbers
                 while (month < 0){
                     month += 12
                 }
@@ -343,7 +359,9 @@ class calendarFragment : Fragment() {
 
 
         nexdBt.setOnClickListener {
+            //if its the last day go to next month
             if (day == mLenList[month]){
+                //if its the last month go to next year
                 if (month == 11){
                     year += 1
                 }
@@ -371,7 +389,7 @@ class calendarFragment : Fragment() {
             pdayTx.text = monthlist[month] + " " + day.toString()
         }
 
-
+        //goes back to monthly view
         bktcBt.setOnClickListener {
             popupV.isVisible = false
 
