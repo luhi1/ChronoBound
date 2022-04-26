@@ -31,4 +31,4 @@
 * [Firebase](https://firebase.google.com) - used for realtime database & authentication
 * [Android Studio](https://developer.android.com/studio) - IDE used for development
 
-*no templates were used except those within Android Studio*
+*No templates were used except those within Android Studio.*
