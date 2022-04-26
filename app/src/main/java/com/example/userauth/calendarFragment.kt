@@ -21,7 +21,6 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class calendarFragment : Fragment() {
-
     private var myRef = FirebaseDatabase.getInstance().getReference("calActivity")
     private lateinit var myListener:ValueEventListener
     override fun onCreateView(
@@ -35,6 +34,8 @@ class calendarFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onStart(){
         super.onStart()
+
+        //adds all the different elements to the code
         val ppupTx = requireView().findViewById<TextView>(R.id.ppupTx)
         val popupV = requireView().findViewById<LinearLayout>(R.id.popupV)
         val calenV = requireView().findViewById<LinearLayout>(R.id.calenV)
@@ -54,6 +55,7 @@ class calendarFragment : Fragment() {
         val evn3Tx = requireView().findViewById<TextView>(R.id.evn3Tx)
         val evn4Tx = requireView().findViewById<TextView>(R.id.evn4Tx)
 
+        //adds specifically all of the buttons of the days of the month
         val dayBtList = arrayOf(
             requireView().findViewById<Button>(R.id.day1Bt),
             requireView().findViewById<Button>(R.id.day2Bt),
@@ -98,6 +100,8 @@ class calendarFragment : Fragment() {
             requireView().findViewById<Button>(R.id.day41Bt),
             requireView().findViewById<Button>(R.id.day42Bt)
         )
+
+        //adds all the buttons relativelayouts (allows for better background)
         val dayRlList = arrayOf(
             requireView().findViewById<RelativeLayout>(R.id.day1Rl),
             requireView().findViewById<RelativeLayout>(R.id.day2Rl),

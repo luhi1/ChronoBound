@@ -34,6 +34,8 @@ class adminCalendar : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onStart(){
         super.onStart()
+
+        //adds all the different elements to the code
         val insuBt = requireView().findViewById<Button>(R.id.insuBt)
         val popupLn = requireView().findViewById<LinearLayout>(R.id.popupLn)
         val calenLn = requireView().findViewById<LinearLayout>(R.id.calenLn)
@@ -54,7 +56,7 @@ class adminCalendar : Fragment() {
         val evni4Ed = requireView().findViewById<EditText>(R.id.evni4Ed)
         val desi4Ed = requireView().findViewById<EditText>(R.id.desi4Ed)
 
-
+        //adds specifically all of the buttons of the days of the month
         val dayBtList = arrayOf(
             requireView().findViewById<Button>(R.id.day1Bt),
             requireView().findViewById<Button>(R.id.day2Bt),
@@ -99,6 +101,7 @@ class adminCalendar : Fragment() {
             requireView().findViewById<Button>(R.id.day41Bt),
             requireView().findViewById<Button>(R.id.day42Bt)
         )
+        //adds all the buttons relativelayouts (allows for better background)
         val dayRlList = arrayOf(
             requireView().findViewById<RelativeLayout>(R.id.day1Rl),
             requireView().findViewById<RelativeLayout>(R.id.day2Rl),
@@ -144,25 +147,29 @@ class adminCalendar : Fragment() {
             requireView().findViewById<RelativeLayout>(R.id.day42Rl)
         )
 
-
+        //used to get help get the time
         val current = LocalDateTime.now()
 
         var year = Integer.parseInt(current.format(DateTimeFormatter.ofPattern("YYYY")))
         var month = Integer.parseInt(current.format(DateTimeFormatter.ofPattern("MM"))) - 1
         var day = 1
         val monthlist = arrayOf("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+        //used to see how far we need to shift the days in the calendar for the month to line up w/ week
         val shiftList = arrayOf(0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4)
         var mLenList = arrayOf(31,28,31,30,31,30,31,31,30,31,30,31)
 
+        //essential function that gives every day its appropriate number, and hides days that aren't used
         fun hideNFixDayNums() {
             mnthTx.text = monthlist[month] + " " + year.toString()
 
+            //traverses day relativelayouts in order to give them their appropriate background
             for (i in dayRlList) {
                 //i.text = ""
                 i.setBackground(activity?.let { ContextCompat.getDrawable(it, R.drawable.dark_blue_square) })
 
                 i.isVisible = false
             }
+            //clears day buttons text so no cross-day interference occurs
             for (i in dayBtList) {
                 i.text = ""
 
@@ -171,26 +178,28 @@ class adminCalendar : Fragment() {
                 //i.background = ContextCompat.getDrawable(this, R.drawable.teal_square)
             }
 
-
+            //includes leap day
             if (year % 4 == 0){
                 mLenList[1] = 29
             }
-
+            //temporary variable for calculating the shift
             var year2 = year
 
             if (month < 2) {
                 year2 -= 1
             }
-
             var shift = (year2 + year2/4 - year2/100 + year2/400 + shiftList[month] + 1) % 7
 
             var monthlength = mLenList[month]
 
+            //traverses to set the correct days visible and give them the correct number
             for (i in 1..monthlength) {
                 dayRlList[(i + shift - 1)].isVisible = true
                 dayBtList[(i + shift - 1)].isVisible = true
 
                 dayBtList[(i + shift - 1)].text = i.toString()
+
+                //colors current day
                 if (i == Integer.parseInt(current.format(DateTimeFormatter.ofPattern("dd"))) && month == Integer.parseInt(current.format(
                         DateTimeFormatter.ofPattern("MM"))) - 1) {
                     dayRlList[(i + shift - 1)].setBackground(activity?.let {
@@ -202,9 +211,10 @@ class adminCalendar : Fragment() {
                 }
             }
         }
+        //function for getting info from firebase
         fun getsingleValueFromDatabase(path: List<String>, reference: String, tvid: TextView){
             var myRef = FirebaseDatabase.getInstance().getReference(reference)
-
+            //allows list to be used for the path
             for (i in path.indices){
                 myRef = myRef.child(path[i]);
             }
@@ -216,6 +226,8 @@ class adminCalendar : Fragment() {
                     // whenever data at this location is updated.
 
                     val value = dataSnapshot.getValue<String>()
+                    //taken code segment end
+                    //makes sure null isnt returned if there is nothing in the database
                     if (value == null){
                         tvid.setText("")
                     } else {
@@ -224,12 +236,15 @@ class adminCalendar : Fragment() {
 
                 }
 
+                //incase of network failure
                 override fun onCancelled(error: DatabaseError) {
                     // Failed to read value
-                    Toast.makeText(activity, "joe" + "Failed to read value." + error.toException(), Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, "error" + "Failed to read value." + error.toException(), Toast.LENGTH_LONG).show()
                 }
             })
         }
+        //code for getting value from firebase, unecessary now but can be helpful in the future
+        /*
         fun getValueFromDatabase(path: List<String>, reference: String, tvid: TextView){
             var myRef = FirebaseDatabase.getInstance().getReference(reference)
 
@@ -258,7 +273,8 @@ class adminCalendar : Fragment() {
                     Toast.makeText(activity, "joe" + "Failed to read value." + error.toException(), Toast.LENGTH_LONG).show()
                 }
             })
-        }
+        }*/
+        //function adds to firebase
         fun addtoDatabase(path: List<String>, reference: String, inpu: String){
             var myRef = FirebaseDatabase.getInstance().getReference(reference)
 
@@ -270,8 +286,10 @@ class adminCalendar : Fragment() {
             myRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     myRef.setValue(inpu)
+                    //taken code end
                     Toast.makeText(activity!!, "events added", Toast.LENGTH_SHORT).show()
                 }
+
 
                 override fun onCancelled(error: DatabaseError) {
                     // Failed to read value
@@ -280,7 +298,7 @@ class adminCalendar : Fragment() {
             })
         }
 
-
+        //makes daily view/pop up invisible
         popupLn.isVisible = false
 
 
@@ -288,12 +306,14 @@ class adminCalendar : Fragment() {
 
 
         backBt.setOnClickListener {
+            //goes to previous year if on first month
             if (month == 0){
                 year -= 1
             }
 
             month -= 1
 
+            //allows negative numbers to work
             while (month < 0){
                 month += 12
             }
@@ -307,6 +327,7 @@ class adminCalendar : Fragment() {
 
 
         nextBt.setOnClickListener {
+            //goes to previous year if on first month
             if (month == 11){
                 year += 1
             }
@@ -317,7 +338,7 @@ class adminCalendar : Fragment() {
 
             hideNFixDayNums()
         }
-
+        //fills the text entry fields with the text that had been put before.
         fun fillintext(){
             getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "note"), "calActivity", inputEd)
 
@@ -337,13 +358,16 @@ class adminCalendar : Fragment() {
             pdayTx.text = monthlist[month] + " " + day.toString()
         }
 
+        //sets up all the listeners for day buttons
         for (i in dayBtList) {
 
             i.setOnClickListener {
+                //shows daily view, hides monthly view
                 popupLn.isVisible = true
 
                 calenLn.isVisible = false
 
+                //sets day to correct value
                 day = Integer.parseInt(i.text.toString())
 
                 fillintext()
@@ -352,7 +376,7 @@ class adminCalendar : Fragment() {
         }
 
 
-
+        //when submit is clicked evewrything in the text fields is added to firebase
         insuBt.setOnClickListener {
             addtoDatabase(listOf(monthlist[month], day.toString(), "note"), "calActivity", inputEd.getText().toString())
 
@@ -370,12 +394,18 @@ class adminCalendar : Fragment() {
 
         }
 
+        //goes to day before
         predBt.setOnClickListener {
+            //if its the first day go to previous month
             if (day == 1){
+                //if its the first month go to previous year
                 if (month == 0){
                     year -= 1
                 }
+
                 month -= 1
+
+                //allows negative numbers
                 while (month < 0){
                     month += 12
                 }
@@ -394,7 +424,9 @@ class adminCalendar : Fragment() {
 
 
         nexdBt.setOnClickListener {
+            //if its the last day go to next month
             if (day == mLenList[month]){
+                //if its the last month go to next year
                 if (month == 11){
                     year += 1
                 }
@@ -411,7 +443,7 @@ class adminCalendar : Fragment() {
             fillintext()
         }
 
-
+        //goes back to monthly view
         bktcBt.setOnClickListener {
             popupLn.isVisible = false
 
