@@ -27,6 +27,7 @@ class scheduleFragment : Fragment() {
 
     override fun onStart(){
         super.onStart()
+        //adds all the different elements to the code
         val wholeLn = requireView().findViewById<LinearLayout>(R.id.wholeLn)
         val prevBt = requireView().findViewById<Button>(R.id.prevBt)
         val dayTx = requireView().findViewById<TextView>(R.id.dayTx)
@@ -58,6 +59,7 @@ class scheduleFragment : Fragment() {
         val fridTx = requireView().findViewById<TextView>(R.id.fridTx)
 
         //val p1Tx = requireView().findViewById<TextView>(R.id.p1Tx)
+        //holds all of the scheduler text views in a organized fashion
         val rowList = arrayOf(
             arrayOf(
                 requireView().findViewById<TextView>(R.id.p1MoTx),
@@ -127,12 +129,13 @@ class scheduleFragment : Fragment() {
 
         val dayTextList = arrayOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
         var day = 0
+        //holds user id
         val user = FirebaseAuth.getInstance().uid
 
-
+        //function adds to firebase
         fun addtoDatabase(path: List<String>, reference: String, inpu: String){
             var myRef = FirebaseDatabase.getInstance().getReference(reference)
-
+            //allows list to be used for the path
             for (i in path.indices){
                 myRef = myRef.child(path[i])
             }
@@ -140,17 +143,20 @@ class scheduleFragment : Fragment() {
             //the code below was taken from the firebase documentation
             myRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    //taken code segment end
                     myRef.setValue(inpu)
                 }
 
                 override fun onCancelled(error: DatabaseError) {
                     // Failed to read value
-                    Toast.makeText(activity, "joe" + "Failed to write value." + error.toException(), Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, "error " + "Failed to write value." + error.toException(), Toast.LENGTH_LONG).show()
                 }
             })
         }
+        //function for getting info from firebase
         fun getSingleValueFromDatabase(path: List<String>, reference: String, tvid: TextView){
             var myRef = FirebaseDatabase.getInstance().getReference(reference)
+            //allows list to be used for the path
             for (i in path.indices){
                 myRef = myRef.child(path[i])
             }
@@ -162,6 +168,8 @@ class scheduleFragment : Fragment() {
                     // whenever data at this location is updated.
 
                     val value = dataSnapshot.getValue<String>()
+                    //taken code segment end
+                    //makes sure null isnt returned if there is nothing in the database
                     if (value == null){
                         tvid.setText("")
                     } else {
@@ -178,7 +186,7 @@ class scheduleFragment : Fragment() {
             })
         }
 
-
+        //fills the text entry fields with the text that had been put before
         fun fillIn(){
             dayTx.text = dayTextList[day]
             for (i in 1..periodEdList.size) {
@@ -189,6 +197,7 @@ class scheduleFragment : Fragment() {
             getSingleValueFromDatabase(listOf(user.toString(), dayTextList[day], "homeWrk"), "schedActivity", homeWrkEd)
         }
 
+        //fills the grid of periods/days
         fun colorIn(){
             for (i in 1..rowList.size) {
                 for (ele in 0..rowList[i - 1].size-1){
@@ -209,7 +218,8 @@ class scheduleFragment : Fragment() {
 
         wholeLn.isVisible = false
         colorIn()
-
+        
+        //when submit is clicked evewrything in the text fields is added to firebase
         sbmtScedBt.setOnClickListener {
             for (i in 1..periodEdList.size) {
                 addtoDatabase(listOf(user.toString(), dayTextList[day], "period" + i.toString()), "schedActivity", periodEdList[i - 1].getText().toString())
@@ -220,7 +230,8 @@ class scheduleFragment : Fragment() {
             Toast.makeText(activity, "Plans added.", Toast.LENGTH_SHORT).show()
 
         }
-
+        
+        //makes all of the weekdays labels clickable, so you can enter that days view
         mondTx.setOnClickListener {
             day = 0
             rowsLn.isVisible = false
@@ -259,11 +270,10 @@ class scheduleFragment : Fragment() {
 
 
 
-
-
-
+        //goes to previous day
         prevBt.setOnClickListener {
             day -= 1
+            //allows negative numbers
             while (day < 0){
                 day += 5
             }
@@ -273,6 +283,7 @@ class scheduleFragment : Fragment() {
 
             fillIn()
         }
+        //goes to the day after
         nextBt.setOnClickListener {
             day = (day + 1) % 5
 
