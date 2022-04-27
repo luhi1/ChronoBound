@@ -16,6 +16,8 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.getValue
 
 class adminLunch : Fragment() {
+
+    //Declare class variables
     private lateinit var databaseListener: ValueEventListener
     private val myRef = FirebaseDatabase.getInstance().getReference("lunchActivity")
 
@@ -29,6 +31,7 @@ class adminLunch : Fragment() {
     }
     override fun onStart(){
         super.onStart()
+        //import xml attributes as variables
         val monday_main = requireView().findViewById<EditText>(R.id.monday_main)
         val monday_side = requireView().findViewById<EditText>(R.id.monday_side)
         val monday_drink = requireView().findViewById<EditText>(R.id.monday_drink)
@@ -46,8 +49,10 @@ class adminLunch : Fragment() {
         val friday_drink = requireView().findViewById<EditText>(R.id.friday_drink)
 
         val saveButton = requireView().findViewById<TextView>(R.id.save_button)
+            //Listeners for change in the lunch Fragment.
             databaseListener = myRef.addValueEventListener(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
+                    //update the screen to reflect the database.
                     getValueFromDatabase(listOf("Monday", "Main"), "lunchActivity", monday_main)
                     getValueFromDatabase(listOf("Monday", "Side"), "lunchActivity", monday_side)
                     getValueFromDatabase(listOf("Monday", "Drink"), "lunchActivity", monday_drink)
@@ -72,6 +77,8 @@ class adminLunch : Fragment() {
                     ).show()
                 }
             })
+
+            //update the databse to reflect the lunch menu visually displayed.
             saveButton.setOnClickListener(){
                 myRef.child("Monday").child("Main").setValue(monday_main.text.toString())
                 myRef.child("Monday").child("Side").setValue(monday_side.text.toString())
@@ -91,6 +98,8 @@ class adminLunch : Fragment() {
             }
 
         }
+
+    //gets a value from the database and displays it.
     fun getValueFromDatabase(path: List<String>, reference: String, etid: EditText) {
         var myRef = FirebaseDatabase.getInstance().getReference(reference)
         for (i in path.indices) {
@@ -112,6 +121,7 @@ class adminLunch : Fragment() {
     }
     override fun onStop() {
         super.onStop()
+        //snaps listeners
         myRef.removeEventListener(databaseListener)
     }
 }

@@ -10,7 +10,10 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
-//code basically taken from https://www.youtube.com/watch?v=8I5gCLaS25w, some if was my own work tho.
+//code taken from https://www.youtube.com/watch?v=8I5gCLaS25w, some if was my own work tho.
+//basically, it logs you in if you have the same credentials of a user in the database. Otherwise
+//it outputs a host of errors (toasts) based on the different conditions met.
+//Also, if you click on the register button, it takes you the register screen.
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

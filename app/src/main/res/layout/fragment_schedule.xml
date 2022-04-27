@@ -1,14 +1,898 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".scheduleFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+    <LinearLayout
+        android:id="@+id/rowsLn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:weightSum="10"
+        android:padding="0dp"
+        android:background="@drawable/whitish_square">
+        <LinearLayout
+            android:id="@+id/dayRowLn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="6"
+            android:gravity="right">
 
-</FrameLayout>
+            <TextView
+                android:id="@+id/mondTx"
+                android:background="@drawable/teal_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="Mo"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/tuesTx"
+                android:background="@drawable/teal_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="Tu"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/wednTx"
+                android:background="@drawable/teal_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="We"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/thurTx"
+                android:background="@drawable/teal_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="Th"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/fridTx"
+                android:background="@drawable/teal_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="Fr"
+                android:textSize="24sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pRow1Ln"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="6">
+            <TextView
+                android:id="@+id/p1Tx"
+                android:background="@drawable/teal_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="P1"
+                android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/p1MoTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p1TuTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p1WeTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p1ThTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p1FrTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pRow2Ln"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="6">
+            <TextView
+                android:id="@+id/p2Tx"
+                android:background="@drawable/teal_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="P2"
+                android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/p2MoTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p2TuTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p2WeTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p2ThTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p2FrTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pRow3Ln"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="6">
+            <TextView
+                android:id="@+id/p3Tx"
+                android:background="@drawable/teal_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="P3"
+                android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/p3MoTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p3TuTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p3WeTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p3ThTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p3FrTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pRow4Ln"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="6">
+            <TextView
+                android:id="@+id/p4Tx"
+                android:background="@drawable/teal_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="P2"
+                android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/p4MoTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p4TuTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p4WeTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p4ThTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p4FrTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pRow5Ln"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="6">
+            <TextView
+                android:id="@+id/p5Tx"
+                android:background="@drawable/teal_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="P5"
+                android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/p5MoTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p5TuTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p5WeTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p5ThTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p5FrTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pRow6Ln"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="6">
+            <TextView
+                android:id="@+id/p6Tx"
+                android:background="@drawable/teal_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="P6"
+                android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/p6MoTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p6TuTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p6WeTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p6ThTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p6FrTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pRow7Ln"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="6">
+            <TextView
+                android:id="@+id/p7Tx"
+                android:background="@drawable/teal_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="P7"
+                android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/p7MoTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p7TuTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p7WeTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p7ThTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p7FrTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pRow8Ln"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="6">
+            <TextView
+                android:id="@+id/p8Tx"
+                android:background="@drawable/teal_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="P8"
+                android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/p8MoTx"
+                android:background="@drawable/whitish_square"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p8TuTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p8WeTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p8ThTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/p8FrTx"
+                android:background="@drawable/whitish_square"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/wholeLn"
+        android:background="@drawable/whitish_square"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="9">
+        <LinearLayout
+            android:id="@+id/day2dayLn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_weight="1">
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/dark_blue_square">
+                <Button
+                    android:id="@+id/prevBt"
+                    android:text="&lt;"
+                    android:background="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/dayTx"
+                android:background="@drawable/whitish_square"
+                android:fontFamily="sans-serif-black"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Monday"/>
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/dark_blue_square">
+                <Button
+                    android:id="@+id/nextBt"
+                    android:text="&gt;"
+                    android:background="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mainLn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="7"
+            android:layout_weight="8">
+            <LinearLayout
+                android:id="@+id/periodsLn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical"
+                android:weightSum="18">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitish_square">
+                    <TextView
+                        android:id="@+id/period1Tx"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="18sp"
+                        android:gravity="center|bottom"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="Period 1:"
+                        />
+                    <EditText
+                        android:background="@android:color/transparent"
+                        android:id="@+id/period1Ed"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:hint="Enter plans:"
+                        android:padding="0dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitish_square">
+                    <TextView
+                        android:id="@+id/period2Tx"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="18sp"
+                        android:gravity="center|bottom"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="Period 2:"
+                        />
+                    <EditText
+                        android:background="@android:color/transparent"
+                        android:id="@+id/period2Ed"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:hint="Enter plans:"
+                        android:padding="0dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitish_square">
+                    <TextView
+                        android:id="@+id/period3Tx"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="18sp"
+                        android:gravity="center|bottom"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="Period 3:"
+                        />
+                    <EditText
+                        android:background="@android:color/transparent"
+                        android:id="@+id/period3Ed"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:hint="Enter plans:"
+                        android:padding="0dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitish_square">
+                    <TextView
+                        android:id="@+id/period4Tx"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="18sp"
+                        android:gravity="center|bottom"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="Period 4:"
+                        />
+                    <EditText
+                        android:background="@android:color/transparent"
+                        android:id="@+id/period4Ed"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:hint="Enter plans:"
+                        android:padding="0dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitish_square">
+                    <TextView
+                        android:id="@+id/period5Tx"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="18sp"
+                        android:gravity="center|bottom"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="Period 5:"
+                        />
+                    <EditText
+                        android:background="@android:color/transparent"
+                        android:id="@+id/period5Ed"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:hint="Enter plans:"
+                        android:padding="0dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitish_square">
+                    <TextView
+                        android:id="@+id/period6Tx"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="18sp"
+                        android:gravity="center|bottom"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="Period 6:"
+                        />
+                    <EditText
+                        android:background="@android:color/transparent"
+                        android:id="@+id/period6Ed"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:hint="Enter plans:"
+                        android:padding="0dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitish_square">
+                    <TextView
+                        android:id="@+id/period7Tx"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="18sp"
+                        android:gravity="center|bottom"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="Period 7:"
+                        />
+                    <EditText
+                        android:background="@android:color/transparent"
+                        android:id="@+id/period7Ed"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:hint="Enter plans:"
+                        android:padding="0dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitish_square">
+
+                    <TextView
+                        android:background="@android:color/transparent"
+                        android:id="@+id/period8Tx"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="18sp"
+                        android:gravity="center|bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight = "1"
+                        android:text="Period 8:"
+                        />
+                    <EditText
+                        android:background="@android:color/transparent"
+                        android:id="@+id/period8Ed"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:hint="Enter plans:"
+                        android:padding="0dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/extraLn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="18"
+                android:layout_weight="3"
+                android:background="@drawable/whitish_square">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitish_square">
+                    <TextView
+                        android:id="@+id/b4ScoolTx"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="18sp"
+                        android:gravity="center|bottom"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="Before school:"
+                        />
+                    <EditText
+                        android:background="@android:color/transparent"
+                        android:id="@+id/b4ScoolEd"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:hint=" Enter plans:"
+                        android:padding="0dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitish_square">
+                    <TextView
+                        android:id="@+id/afScoolTx"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="18sp"
+                        android:gravity="center|bottom"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="After school:"
+                        />
+                    <EditText
+                        android:background="@android:color/transparent"
+                        android:id="@+id/afScoolEd"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:hint=" Enter plans:"
+                        android:padding="0dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/whitish_square">
+                    <TextView
+                        android:id="@+id/homeWrkTx"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="18sp"
+                        android:gravity="center|bottom"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="Homework:"
+                        />
+                    <EditText
+                        android:background="@android:color/transparent"
+                        android:id="@+id/homeWrkEd"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:hint=" Enter plans:"
+                        android:padding="0dp"/>
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@drawable/dark_blue_square">
+                    <Button
+                        android:id="@+id/sbmtScedBt"
+                        android:layout_weight="2"
+                        android:text="Sumbit your schedule"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@drawable/dark_blue_square">
+                    <Button
+                        android:id="@+id/goBackBt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:text="go back to day menu"
+                        />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

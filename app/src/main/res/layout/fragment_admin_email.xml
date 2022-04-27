@@ -141,14 +141,14 @@
             android:visibility="visible">
 
             <Button
-                android:autoSizeMinTextSize="5sp"
-                android:autoSizeMaxTextSize="10sp"
-                android:autoSizeTextType="uniform"
                 android:id="@+id/add_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:autoSizeMaxTextSize="10sp"
+                android:autoSizeMinTextSize="5sp"
+                android:autoSizeTextType="uniform"
                 android:background="@android:color/transparent"
-                android:text="Create A New Club"
+                android:text="Create A New Teacher"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textStyle="bold" />

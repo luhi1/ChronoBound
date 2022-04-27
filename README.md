@@ -9,7 +9,7 @@
 * Android 5.0+
 * Internet connection
 ### How to install
-1. Download chronobound1.0.apk from [here](https://github.com/luhi1/ChronoBound/blob/master/chronobound1.0.apk)
+1. Download chronoBound1.0.apk from [here](https://github.com/luhi1/ChronoBound/blob/master/chronoBound1.0.apk)
 2. Turn off [play protect](https://support.google.com/googleplay/answer/2812853?hl=en#:~:text=Turn,off) if necessary
 3. Open the .apk file; allow installation from your browser if necessary
 ## Usage notes
@@ -17,18 +17,18 @@
 |email:|password:|admin?:|
 | --- | --- | --- |
 |aliceistestingusers@example.com|password|no|
-|admin@gmail.com||yes|
+|admin@gmail.com|admin1|yes|
 ### ChronoBound sections
-* Calendar - students can get school information about daily events
-* Scheduler - students can input their schedules by clicking on a day of the week
-* Lunch menu - students can see a lunch menu
-* Staff email - students can email teachers/staff members
-* Club info. - students can see information about extracurricular activities/school clubs
-* Bug report - students can report any bugs
+* Calendar - Students can get school information about daily events
+* Scheduler - Students can input their schedules by clicking on a day of the week
+* Lunch menu - Students can see a lunch menu
+* Staff email - Students can email teachers/staff members
+* Club info. - Students can see information about extracurricular activities/school clubs
+* Bug report - Students can report any bugs
 ## Acknowledgements
 * [No-Name Arts](https://www.instagram.com/no_name_crafts) - made logo/app icon
 ### Built with
 * [Firebase](https://firebase.google.com) - used for realtime database & authentication
 * [Android Studio](https://developer.android.com/studio) - IDE used for development
 
-*no templates were used except those within Android Studio*
+*No templates were used except those within Android Studio.*

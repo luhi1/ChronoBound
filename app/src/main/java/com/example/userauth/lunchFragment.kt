@@ -15,6 +15,8 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.getValue
 
 class lunchFragment : Fragment() {
+
+    //declare class variables
     private lateinit var databaseListener: ValueEventListener
     private val myRef = FirebaseDatabase.getInstance().getReference("lunchActivity")
 
@@ -24,9 +26,11 @@ class lunchFragment : Fragment() {
         inflater.inflate(R.layout.fragment_lunch, container, false)
 
         super.onCreate(savedInstanceState)
+
+        //creates a listener for change in the database.
         databaseListener = myRef.addValueEventListener(object: ValueEventListener {
                override fun onDataChange(snapshot: DataSnapshot) {
-                Log.d("joe", "pleasefortheloveofgodfireabse")
+                //updates all values of the xml to match the database.
                 view?.let { getValueFromDatabase(listOf("Monday", "Main"), "lunchActivity", it.findViewById(R.id.monday_main)) }
                 view?.let { getValueFromDatabase(listOf("Monday", "Side"), "lunchActivity", it.findViewById(R.id.monday_side)) }
                 view?.let { getValueFromDatabase(listOf("Monday", "Drink"), "lunchActivity", it.findViewById(R.id.monday_drink)) }
@@ -55,6 +59,7 @@ class lunchFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_lunch, container, false)
     }
 
+    //get a single value from the database and display it on the screen.
     fun getValueFromDatabase(path: List<String>, reference: String, tvid: TextView){
         var myRef = FirebaseDatabase.getInstance().getReference(reference)
         for (i in path.indices){
@@ -77,6 +82,7 @@ class lunchFragment : Fragment() {
     }
     override fun onStop(){
         super.onStop()
+        //Snap
         myRef.removeEventListener(databaseListener)
     }
 }
