@@ -2,7 +2,7 @@
 ## A scheduler app for Nevadans.
 ![ChronoBound icon](https://github.com/luhi1/ChronoBound/blob/master/app/src/main/ic_app_icon-playstore.png)
 ## Authors
-* Carlo Allietti carlo.360329@nv.ccsd.net
+* Carlo work@fano.club
 * Michael Borov michael.378826@nv.ccsd.net
 ## Installation instructions
 ### Requirements
